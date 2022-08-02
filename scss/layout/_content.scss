@@ -12,9 +12,9 @@ Content
 
 .sidebar {
   position: sticky;
-  top: 10%;
+  top: 0;
   background-color: $color-theme-2;
-  max-height: 750px;
+  max-height: 100vh;
   border-radius: 5px;
 
   ul {
@@ -67,9 +67,11 @@ Content
 }
 
 section {
-  padding: 100px;
+  padding: 0 100px;
   overflow: hidden;
-  min-height: 750px;
+  min-height: 100vh;
+  margin-bottom: 50px;
+  //margin: auto;
 
   form {
     background-color: $color-theme-4;
