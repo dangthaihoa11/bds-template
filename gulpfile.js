@@ -12,7 +12,7 @@ const plumber = require('gulp-plumber')
 const size = require('gulp-size')
 const purgecss = require('gulp-purgecss')
 
-const browserSync = require('browser-sync');
+const browserSync = require('browser-sync')
 const server = browserSync.create()
 
 const paths = {
@@ -34,7 +34,8 @@ const paths = {
   },
   scriptsCore: {
     src: [
-      'third_party/modernizr.min.js'
+      'third_party/modernizr.min.js',
+      'third_party/slick/slick.min.js'
     ],
     dest: 'dist/'
   },
@@ -65,7 +66,7 @@ function styles() {
     .pipe(sass({ outputStyle: 'expanded' }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.styles.dest))
-    .pipe(server.reload({stream: true}))
+    .pipe(server.reload({ stream: true }))
 }
 
 /*
@@ -84,7 +85,7 @@ function stylesMin() {
     )
     .pipe(size())
     .pipe(gulp.dest(paths.stylesMin.dest))
-    .pipe(server.reload({stream: true}))
+    .pipe(server.reload({ stream: true }))
 }
 
 function unusedCSS() {
@@ -108,7 +109,7 @@ function scripts() {
     .pipe(concat('app.min.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(server.reload({stream: true}))
+    .pipe(server.reload({ stream: true }))
 }
 
 function scriptsCore() {
@@ -120,7 +121,7 @@ function scriptsCore() {
     .pipe(concat('core.min.js'))
     .pipe(size())
     .pipe(gulp.dest(paths.scriptsCore.dest))
-    .pipe(server.reload({stream: true}))
+    .pipe(server.reload({ stream: true }))
 }
 
 function images() {
@@ -130,7 +131,7 @@ function images() {
     .pipe(newer(paths.images.dest)) // pass through newer images only
     .pipe(size())
     .pipe(gulp.dest(paths.images.dest))
-    .pipe(server.reload({stream: true}))
+    .pipe(server.reload({ stream: true }))
 }
 
 function serve() {

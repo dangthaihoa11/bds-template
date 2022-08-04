@@ -24,6 +24,7 @@
 //
 // =Third parties
 // --------------------------------------------------
+@import '../third_party/slick/slick.scss';
 //
 // =Partials
 // --------------------------------------------------
@@ -41,6 +42,7 @@
 // =Layout
 // --------------------------------------------------
 @import 'layout/header';
+@import 'layout/sidebar';
 @import 'layout/content';
 @import 'layout/footer';
 //

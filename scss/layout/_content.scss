@@ -6,83 +6,45 @@ Content
   display: none;
 }
 
-.main-content {
-  position: relative;
-}
-
-.sidebar {
-  position: sticky;
-  top: 0;
-  background-color: $color-theme-2;
-  max-height: 100vh;
-  border-radius: 5px;
-
-  ul {
-    padding-left: 0;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 30px 0;
-    text-align: center;
-
-    li {
-      margin-top: 70px;
-      position: relative;
-
-      p {
-        color: $color-theme-4;
-        font-size: 10px;
-        margin-top: 10px;
-      }
-
-      a {
-        color: $color-theme-3;
-        text-decoration: none;
-        font-weight: 600;
-        padding: 10px;
-        font-size: 15px;
-        border-radius: 5px;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out;
-
-        &.active,
-        &:hover {
-          background-color: $color-theme-1;
-          border-color: $color-theme-1;
-        }
-
-        &:last-child::after {
-          content: '';
-          height: 50px;
-          width: 0;
-          border-left: 1px solid $color-theme-3;
-          border-right: 1px solid $color-theme-3;
-          position: absolute;
-          left: 50%;
-          top: 150%;
-        }
-      }
+.main-container {
+  @include media-breakpoint-up(lg) {
+    position: relative;
+    .sidebar {
+      position: sticky;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 200px;
+      margin-right: $grid-gutter-width;
+      display: block;
+      float: left;
+      min-height: 100vh;
+    }
+    .main-content {
+      margin-left: 240px;
     }
   }
 }
 
-section {
-  padding: 0 100px;
-  overflow: hidden;
-  min-height: 100vh;
+.main-content {
+  position: relative;
+}
+
+.section {
   margin-bottom: 50px;
-  //margin: auto;
 
   form {
     background-color: $color-theme-4;
     border-radius: 5px;
-    max-height: 750px;
 
     .form-items {
       position: relative;
-      margin: 50px;
+      margin: 15px 0;
       background: transparent;
       border: none;
+      @include media-breakpoint-up(lg) {
+        margin: 50px;
+      }
 
       label {
         font-weight: 700;
@@ -90,18 +52,8 @@ section {
       }
 
       input {
-        width: 100%;
         border: none;
-        height: 45px;
-        border-radius: 5px;
         outline: none;
-      }
-
-      span {
-        position: absolute;
-        font-size: 9px;
-        top: 110%;
-        left: 0;
       }
     }
   }
@@ -145,10 +97,11 @@ section {
 
 .section-2 {
   form {
-    max-height: 750px;
-
     .form-group {
-      margin: 50px;
+      margin: 15px 0;
+      @include media-breakpoint-up(lg) {
+        margin: 50px;
+      }
 
       .form-items {
         margin: 0;
@@ -253,6 +206,7 @@ section {
           align-items: center;
           justify-content: center;
           color: #000000;
+
           &:after {
             counter-increment: section;
             content: counter(section);
@@ -283,5 +237,35 @@ section {
     p {
       margin: 50px;
     }
+  }
+}
+
+.slick-dots {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+
+  > li {
+    margin: 0 5px;
+  }
+
+  button {
+    background-color: transparent;
+    border-width: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+  }
+
+  .slick-active button {
+    background-color: #000000;
+    color: #fff;
   }
 }

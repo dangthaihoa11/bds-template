@@ -33,9 +33,16 @@ if (Modernizr.touch === true && window.innerWidth <= 767) {
     return scrollbarWidth
   }
 
+  function homeSlider() {
+    $('.section-slider').slick({
+      arrows: false,
+      dots: true,
+    })
+  }
 
   function init() {
     getBarwidth()
+    homeSlider()
   }
 
   init()

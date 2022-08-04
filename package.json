@@ -74,6 +74,8 @@
     "@fortawesome/fontawesome-free": "^6.1.1",
     "@popperjs/core": "^2.11.5",
     "bootstrap": "5.2.0-beta1",
+    "jquery": "^3.6.0",
+    "slick-carousel": "^1.8.1",
     "standard-version": "^9.5.0"
   }
 }

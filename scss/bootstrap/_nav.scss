@@ -3,15 +3,12 @@ nav {
   .nav-item {
     .nav-link {
       color: $color-theme-2;
-      font-weight: 800px;
+      font-weight: 700;
       &:hover,
       &.active {
         color: $color-theme-3;
         background-color: $color-theme-1;
       }
-    }
-    &.nav-item-en {
-      border-right: 1px solid $color-theme-2;
     }
   }
   .nav-top-right {
